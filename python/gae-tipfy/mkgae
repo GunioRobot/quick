@@ -1,0 +1,56 @@
+#!/bin/bash
+
+MK_DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+echo "if you don't already have distribute, virtualenv, and pip installed run pre-requisities.sh first"
+echo 
+echo "usage: mkgae"
+echo "         will prep the files locally to bootstap new projects with mkapp"
+echo
+
+echo
+echo creating buildout defaults in $HOME/.buildout/defaulf.cfg
+mkdir -p $HOME/.buildout/eggs
+mkdir -p $HOME/.buildout/downloads
+mkdir -p $HOME/.buildout/extends
+
+if [ -e "$HOME/.buildout/default.cfg" ]
+then mv "$HOME/.buildout/default.cfg" "$HOME/.buildout/default.old.$$"
+fi
+
+echo "[buildout]" >> "$HOME/.buildout/default.cfg"
+echo "eggs-directory = $HOME/.buildout/eggs" >> $HOME/.buildout/default.cfg
+echo "download-cache = $HOME/.buildout/downloads">> $HOME/.buildout/default.cfg
+echo "extends-cache  = $HOME/.buildout/extends" >> $HOME/.buildout/default.cfg
+echo "" >> $HOME/.buildout/default.cfg
+
+echo
+echo downloading local copy of gae, tify, etc. to gae.local
+echo
+
+PRJ_DIR=gae.local
+
+if [ -d "$PRJ_DIR" ]
+then mv "$PRJ_DIR" "$PRJ_DIR.old.$$"
+fi
+
+mkdir -p $PRJ_DIR
+
+cp -r $MK_DIR/buildout/ $PRJ_DIR
+
+echo
+echo copying html5-boilerplate/publish to $PRJ_DIR/app/boilerplate/  [ cf http://html5boilerplate.com ]
+echo cp -r $MK_DIR/boilerplate/ $PRJ_DIR/app
+cp -r $MK_DIR/boilerplate $PRJ_DIR/app
+
+cd $PRJ_DIR
+echo `pwd`
+echo python2.5 bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
+
+python2.5 bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
+echo bin/buildout
+bin/buildout
+
+
+
+

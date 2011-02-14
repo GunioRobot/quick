@@ -1,0 +1,4 @@
+update default app.yaml
+ - disable logging of favicon
+ - guido's new db api
+

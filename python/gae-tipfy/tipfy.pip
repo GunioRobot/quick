@@ -1,0 +1,14 @@
+
+# zc.buildout==1.5.2
+# zc.buildout
+# zc.recipe.egg
+
+# appfy for appengine buildout recipes
+# -e hg+https://appfy.googlecode.com/hg/#egg=appfy
+
+# tipfy for a lightweight appengine framework
+# -e hg+https://tipfy.googlecode.com/hg/#egg=tipfy
+
+
+
+

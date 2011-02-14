@@ -1,0 +1,69 @@
+#!/bin/bash
+MK_DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+echo "if you don't already have distribute, virtualenv, and pip installed run pre-requisities.sh first"
+echo ""
+echo "usage: mkapp [/fully/qualified/location/of/project]"
+echo "   eg: mkapp ~/projects/new-thing"
+echo "         will create the project in ~/projects/new-thing and use 'new-thing' as the workon name"
+echo "   ie: workon new-thing"
+echo "         will switch to the new-thing project virtualenv and cd to ~/projects/new-thing"
+echo ""
+
+PROJECT="${1##*/}"
+PRJ_DIR="$1"
+ENV_DIR="$WORKON_HOME/$PROJECT"
+
+echo 
+echo workon project: $PROJECT
+echo project install dir: $PRJ_DIR
+echo virtualenv dir: $ENV_DIR
+
+read -p "hit any key to continue"
+
+echo "creating virtualenv"
+
+echo virtualenv --unzip-setuptools --distribute --python=python2.5 $ENV_DIR
+virtualenv --unzip-setuptools --distribute --python=python2.5 $ENV_DIR
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+# cd to the project dir after 'workon PROJECT'
+mkdir -p $PRJ_DIR
+echo cd $PRJ_DIR > $ENV_DIR/bin/postactivate
+
+cp -r $MK_DIR/gae.local/ $PRJ_DIR
+
+# echo cp -r $MK_DIR/buildout/* $PRJ_DIR
+# cp -r $MK_DIR/buildout/* $PRJ_DIR
+
+# echo copying html5-boilerplate/publish to $PRJ_DIR/app/static/  
+# echo     cf http://html5boilerplate.com 
+# echo     cp -r $MK_DIR/boilerplate  $PRJ_DIR/app
+# cp -r $MK_DIR/boilerplate  $PRJ_DIR/app
+
+echo 
+echo workon $PROJECT 
+echo   will activate the virtual environment and cd to $PRJ_DIR
+
+# workon $PROJECT
+
+# echo installing PIL for the GAE SDK imaging API
+# pip -E $ENV_DIR install pil
+
+# python bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
+# bin/buildout
+# virtualenv --relocatable $ENV_DIR
+
+echo
+echo "NOTE: you are still where you started mkapp -- to work on your new app:"
+echo "  workon $PROJECT"
+echo "" 
+echo "then to start the dev appserver at http://localhost:7000 "
+echo "  bin/dev_appserver "
+echo ""
+echo "remember to edit your application id in app.yaml and any API keys"
+echo ""
+
+
+
