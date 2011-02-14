@@ -1,0 +1,10 @@
+
+mkgae 
+   will run the shared buildout and make gae.local here
+
+mkapp ~/fully/qualified/dir/to/projectname
+   depends on existing gae.local here and will create per-app environments 
+   the real app dependencies will be managed by buildout and system python2.5
+   but for convenience it's placed in a virtualenv accessible via:
+
+workon projectname
