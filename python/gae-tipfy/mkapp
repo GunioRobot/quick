@@ -32,7 +32,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkdir -p $PRJ_DIR
 echo cd $PRJ_DIR > $ENV_DIR/bin/postactivate
 
-cp -r $MK_DIR/gae.local/ $PRJ_DIR
+cp -r $MK_DIR/gae.local/* $PRJ_DIR
 
 # echo cp -r $MK_DIR/buildout/* $PRJ_DIR
 # cp -r $MK_DIR/buildout/* $PRJ_DIR
