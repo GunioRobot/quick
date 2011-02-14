@@ -43,11 +43,14 @@ echo copying html5-boilerplate/publish to $PRJ_DIR/app/boilerplate/  [ cf http:/
 echo cp -r $MK_DIR/boilerplate/ $PRJ_DIR/app
 cp -r $MK_DIR/boilerplate $PRJ_DIR/app
 
-cd $PRJ_DIR
-echo `pwd`
-echo python2.5 bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
+echo cd $MK_DIR/$PRJ_DIR
+cd $MK_DIR/$PRJ_DIR
 
+echo pwd: `pwd`
+
+echo python2.5 bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
 python2.5 bootstrap.py --distribute --setup-source=distribute_setup.py --version=1.5.2
+
 echo bin/buildout
 bin/buildout
 
