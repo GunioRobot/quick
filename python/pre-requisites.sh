@@ -26,8 +26,8 @@ echo adding . virtualenvwrapper.sh to ~/.bash_profile
 echo . /usr/local/bin/virtualenvwrapper.sh >> ~/.bash_profile
 . ~/.bash_profile
 
-echo the next line should say WORKON_HOME = ~/.virtualenvs or equivalent 
-echo check: WORKON_HOME = $WORKON_HOME    
+echo the next line should say WORKON_HOME = ~/.virtualenvs or equivalent
+echo check: WORKON_HOME = $WORKON_HOME
 
 
 

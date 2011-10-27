@@ -9,7 +9,7 @@ Major changes:
 <ul>
 <li>Removed <code>-webkit-font-smoothing: antialiased;</code> it makes monospace too thin.</li>
 <li>IE conditional classes have moved from the <code>&lt;body&gt;</code> tag to the <code>&lt;html&gt;</code> tag ( #44 ).</li>
-<li>Dropped <code>text-rendering: <a href="http://www.aestheticallyloyal.com/public/optimize-legibility/">optimizeLegibility</a></code> as it breaks small-caps, looks odd on Linux machines, and goes invisible on WebOS.</li> 
+<li>Dropped <code>text-rendering: <a href="http://www.aestheticallyloyal.com/public/optimize-legibility/">optimizeLegibility</a></code> as it breaks small-caps, looks odd on Linux machines, and goes invisible on WebOS.</li>
 <li>Added a IE6 call for the minified <code>dd_belatedpng</code>.</li>
 <li>Revised viewport declaration to allow user scaling and clear Webkit console errors ( #37 ).</li>
 <li>Updated Modernizr to 1.6 </li>
@@ -34,8 +34,8 @@ Major changes:
 * Removed scrollbar from textareas in IE.
 * Fixed textarea stylings and form field treatment for validity. Added default background-color.
 * New robust clearfix solution without IE 5.5 hack ( #45 #126 ).
-* Margins for form-elements explicitly set to 0 as webkit adds 2px space around form elements' chrome. 
-* Dropped text-rendering: optimizeLegibility as it breaks small-caps and looks odd on Linux machines. 
+* Margins for form-elements explicitly set to 0 as webkit adds 2px space around form elements' chrome.
+* Dropped text-rendering: optimizeLegibility as it breaks small-caps and looks odd on Linux machines.
 * Lists now have a left margin of 1.8em. Default list-style-type for ordered list is decimal.
 * Image Replacement now works with right-to-left text ( #68 ).
 * Removed "Star Hack" for checkboxes in favor of .ie7 selector.
@@ -72,7 +72,7 @@ Shi Chuan, Rob Larsen, Ivan Nikolić, Mikko Tikkanen, Velir, Paul Neave, Weston 
 * Corrected IE=edge,chromeframe enabling (As a result, the base HTML [does not validate](http://bit.ly/cGSSgr))
 * ServerSideIncludes disabled by default.
 * Apache config bugfixes
-* Conditional body tag class combined 
+* Conditional body tag class combined
 * dd_belatedPNG updated to 0.0.8. Redundant BackgroundImageCache fix removed.
 
 [View full diff and commit history](http://github.com/paulirish/html5-boilerplate/compare/v0.9...v0.9.1)
@@ -97,7 +97,7 @@ Major components:
 
 Everything else:
 
-* [The Unlicense](http://unlicense.org) (aka: public domain) 
+* [The Unlicense](http://unlicense.org) (aka: public domain)
 
 
 ## Summary:
@@ -121,7 +121,7 @@ This is a set of files that a front-end developer can use to get started on a we
 15. IE6 pngfix baked in.
 16. jQuery, waiting for you
 
-## Releases 
+## Releases
 
 There are two releases: a documented release, which is exactly what you see here, and a "stripped" release, with most of the descriptive comments stripped out.
 

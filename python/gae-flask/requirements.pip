@@ -1,11 +1,11 @@
 
 # everything pip installs to the virtualenv is for local use while developing
-# dependencies required in deployment are in the project dir 
+# dependencies required in deployment are in the project dir
 
 # a better REPL
 ipython
 
-# moved to bin/install easy_install until http://bitbucket.org/ianb/pip/issue/40 resolved 
+# moved to bin/install easy_install until http://bitbucket.org/ianb/pip/issue/40 resolved
 #  egenix-mx-base
 
 # nose testing framework

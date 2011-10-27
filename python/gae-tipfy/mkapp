@@ -14,7 +14,7 @@ PROJECT="${1##*/}"
 PRJ_DIR="$1"
 ENV_DIR="$WORKON_HOME/$PROJECT"
 
-echo 
+echo
 echo workon project: $PROJECT
 echo project install dir: $PRJ_DIR
 echo virtualenv dir: $ENV_DIR
@@ -37,13 +37,13 @@ cp -r $MK_DIR/gae.local/* $PRJ_DIR
 # echo cp -r $MK_DIR/buildout/* $PRJ_DIR
 # cp -r $MK_DIR/buildout/* $PRJ_DIR
 
-# echo copying html5-boilerplate/publish to $PRJ_DIR/app/static/  
-# echo     cf http://html5boilerplate.com 
+# echo copying html5-boilerplate/publish to $PRJ_DIR/app/static/
+# echo     cf http://html5boilerplate.com
 # echo     cp -r $MK_DIR/boilerplate  $PRJ_DIR/app
 # cp -r $MK_DIR/boilerplate  $PRJ_DIR/app
 
-echo 
-echo workon $PROJECT 
+echo
+echo workon $PROJECT
 echo   will activate the virtual environment and cd to $PRJ_DIR
 
 # workon $PROJECT
@@ -58,7 +58,7 @@ echo   will activate the virtual environment and cd to $PRJ_DIR
 echo
 echo "NOTE: you are still where you started mkapp -- to work on your new app:"
 echo "  workon $PROJECT"
-echo "" 
+echo ""
 echo "then to start the dev appserver at http://localhost:7000 "
 echo "  bin/dev_appserver "
 echo ""

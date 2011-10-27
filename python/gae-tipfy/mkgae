@@ -3,7 +3,7 @@
 MK_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 echo "if you don't already have distribute, virtualenv, and pip installed run pre-requisities.sh first"
-echo 
+echo
 echo "usage: mkgae"
 echo "         will prep the files locally to bootstap new projects with mkapp"
 echo
